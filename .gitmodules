@@ -1,0 +1,3 @@
+[submodule "oneapi-php"]
+	path = oneapi-php
+	url = https://github.com/infobip/oneapi-php.git
