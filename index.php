@@ -43,7 +43,7 @@
       <div class="jumbotron">
         <h1>Infobip Social Invites Demo!</h1>
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
-        <p><iframe width="328" height="218" scrolling="no" frameborder="0" src="widget/send-message-form.php"></iframe></p>
+        <p><iframe width="328" height="268" scrolling="no" frameborder="0" src="widget/send-message-form.php"></iframe></p>
       </div>
 
       <!-- Example row of columns -->
