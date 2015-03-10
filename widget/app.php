@@ -61,28 +61,17 @@ function redirectWithFormSuccess($url, $message) {
     redirectToForm(true, $url, $message);
 }
 
-function redirectToForm($success, $url, $message) {
-//    if(DEBUG)
-//         $message .= "<hr/>" . implode('<br/>', Logs::getLogs());
-//
-//    $message .= '<hr><a href="index.php">home</a>';
-//
-//    if($success)
-//        header('Location: ' . $url . '?success=' . urlencode($message));
-//    else
-//        header('Location: ' . $url . '?alert=' . urlencode($message));
-
-    if (DEBUG)
-        $message1 .= "<hr/>" . implode('<br/>');
-
+function redirectToForm($success, $url, $message1) {
+    $message = '';
     if ($success) {
-        $message1 .= '<p>'. SUCCESS_MESSAGE .'</p>';
-        header('Location: ' . $url . '?success=' . urlencode($message1));
+        $message .= '<p>'. SUCCESS_MESSAGE .'</p>';
+        header('Location: ' . $url . '?success=' . urlencode($message));
     } else {
-        $message1 .= '<p>'. ERROR_MESSAGE .'</p>';
-        header('Location: ' . $url . '?alert=' . urlencode($message1));
+	$messageReason = '<p><small>' . $message1 . '</small></p>';
+        $message .= '<p>'. ERROR_MESSAGE .'</p>' . (DEBUG ? $messageReason : '');
+        header('Location: ' . $url . '?alert=' . urlencode($message));
     }
-    
+
     $_SESSION['params'] = array();
     foreach($_GET as $key => $value)
         $_SESSION['params'][$key] = $value;
